@@ -21,4 +21,20 @@ export class UserService {
   public save(user: User){
     return this.http.post<User>(this.userUrl, user);
   }
+
+  public login(user: User){
+    return this.http.post<any>(this.userUrl, user);
+  }
+
+  public logout(){
+    localStorage.clear();
+  }
+
+  public loggedIn(): boolean{
+    if(localStorage.getItem('token')){
+        return true;
+    } else{
+        return false;
+    }
+}
 }

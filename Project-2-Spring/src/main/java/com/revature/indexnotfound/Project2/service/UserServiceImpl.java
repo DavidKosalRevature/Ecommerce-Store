@@ -58,8 +58,15 @@ public class UserServiceImpl implements UserService {
         return repository.save(userDB);
     }
 
+    @Override
+    public void login(User user) {
+
+    }
+
 //    @Override
 //    public User fetchUserByName(String firstName) {
 //        return repository.findByUserNameIgnoreCase(firstName);
 //    }
+
+
 }

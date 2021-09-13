@@ -2,7 +2,7 @@
     <div class="card-body">
       <form (ngSubmit)="onSubmit()" #userForm="ngForm">
         <div class="form-group">
-          <label for="FirstName">First Name</label>
+          <label for="firstName">First Name</label>
           <input type="text" [(ngModel)]="user.firstName" 
             class="form-control" 
             id="firstName" 
@@ -10,9 +10,9 @@
             placeholder="Enter your first name"
             required #firstName="ngModel">
         </div>
-        <!-- <div [hidden]="!FirstName.pristine" class="alert alert-danger">First Name is required</div> -->
+        <div [hidden]="!firstName.pristine" class="alert alert-danger">First Name is required</div>
         <div class="form-group">
-            <label for="LastName">Last Name</label>
+            <label for="lastName">Last Name</label>
             <input type="text" [(ngModel)]="user.lastName" 
               class="form-control" 
               id="lastName" 
@@ -20,7 +20,7 @@
               placeholder="Enter your last name"
               required #lastName="ngModel">
           </div>
-          <!-- <div [hidden]="!LastName.pristine" class="alert alert-danger">Last Name is required</div> -->
+          <div [hidden]="!lastName.pristine" class="alert alert-danger">Last Name is required</div>
         <div class="form-group">
           <label for="email">Email</label>
           <input type="text" [(ngModel)]="user.email" 
@@ -29,7 +29,7 @@
             name="email" 
             placeholder="Enter your email address"
             required #email="ngModel">
-          <!-- <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div> -->
+          <div [hidden]="!email.pristine" class="alert alert-danger">Email is required</div>
         </div>
         <div class="form-group">
             <label for="address">Address</label>
@@ -39,7 +39,7 @@
               name="address" 
               placeholder="Enter your street address"
               required #address="ngModel">
-            <!-- <div [hidden]="!address.pristine" class="alert alert-danger">Street Address is required</div> -->
+            <div [hidden]="!address.pristine" class="alert alert-danger">Street Address is required</div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
@@ -49,7 +49,7 @@
               name="password" 
               placeholder="Enter your password"
               required #password="ngModel">
-            <!-- <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div> -->
+            <div [hidden]="!password.pristine" class="alert alert-danger">Password is required</div>
           </div>
           <div class="form-group">
             <label for="type">Choose Account Type:</label>
