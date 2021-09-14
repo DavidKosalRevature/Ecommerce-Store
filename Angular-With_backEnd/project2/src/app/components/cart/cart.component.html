@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Product Image</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+              <td></td>
+           <td>{{order.productName}}</td>
+           <td>{{order.quantity}}</td>
+           <td>{{order.price}}</td>
+          </tr>
+        </tbody>
+        
+      </table>
+
+</div>
