@@ -1,13 +1,14 @@
-package repository;
-import org.springframework.data.jpa.repository.JpaRepository;
-//
-//import com.revature.spring.data.jpa.demo.User;
+package com.revature.repository;
 
+
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import com.revature.User;
+
+import com.revature.entity.User;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     // JPQL
     @Query("select u from User u where u.emailId= ?1")
-    User getUsertByEmailAddress(String email);
+    User getUserByEmailAddress(String email);
 
     @Query("select u.firstName from User u where u.emailId=?1")
     String getUserFirstNameByEmailAddress(String emailId);
