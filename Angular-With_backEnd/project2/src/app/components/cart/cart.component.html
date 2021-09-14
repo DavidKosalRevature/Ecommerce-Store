@@ -9,14 +9,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let order of orders">
+          <tr *ngFor="let item of items">
               <td></td>
-           <td>{{order.productName}}</td>
-           <td>{{order.quantity}}</td>
-           <td>{{order.price}}</td>
+           <td>{{item.productName}}</td>
+           <td>{{item.quantity}}</td>
+           <td>{{item.price}}</td>
           </tr>
         </tbody>
-        
+    
+            <button class="btn btn-primary" type="submit">Purchase</button>
+           
       </table>
 
 </div>
