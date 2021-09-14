@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class OrderService {
 
+  // connect backend 
   private BASEURL = 'http://localhost:9091/';
   private ENDPOINTS = {
     IOrder: 'orders',
