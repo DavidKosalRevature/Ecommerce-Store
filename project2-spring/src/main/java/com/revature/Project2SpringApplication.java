@@ -3,6 +3,7 @@ package com.revature;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//Crud application using Spring boot and Angular
 @SpringBootApplication
 public class Project2SpringApplication {
 
