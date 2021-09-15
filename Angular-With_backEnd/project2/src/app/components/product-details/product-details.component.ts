@@ -21,10 +21,18 @@ public products:any
 
   ngOnInit(): void {
 
-    this.productDetailsService.getProductDetails(this.productId).subscribe(data=>{
-      this.productId=data
+this.productDetailsService.getProductDetails(2).subscribe(data=>{
+  this.productId=data
+  console.log(this.productId)
+})
 
+
+    this.productDetailsService.getAllProducts().subscribe(data=>{
+      this.products=data
+console.log(this.products)
     })
   }
+
+
 
 }
