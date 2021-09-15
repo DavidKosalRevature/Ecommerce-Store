@@ -8,7 +8,9 @@ import { EmployeeDeleteComponent } from './components/employee-delete/employee-d
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { EmployeeUpdateComponent } from './components/employee-update/employee-update.component';
 import { CartComponent } from './components/cart/cart.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { CategoryComponent } from './components/category/category.component';
+import { ProductsComponent } from './components/products/products.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,9 @@ import {HttpClientModule} from '@angular/common/http'
     EmployeeDeleteComponent,
     EmployeeListComponent,
     EmployeeUpdateComponent,
-    CartComponent
+    CartComponent,
+    CategoryComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

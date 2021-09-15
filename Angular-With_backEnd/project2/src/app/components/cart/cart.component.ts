@@ -20,7 +20,6 @@ export class CartComponent implements OnInit {
 this.orderService.getOrder().subscribe(data=>{
   this.orders=data;
 })
-
   }
 
 }

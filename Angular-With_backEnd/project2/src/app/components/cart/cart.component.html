@@ -6,6 +6,8 @@
             <th scope="col">Product Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
+            <th scope="col">Actions</th>
+
           </tr>
         </thead>
         <tbody>
@@ -14,10 +16,12 @@
            <td>{{order.productName}}</td>
            <td>{{order.quantity}}</td>
            <td>{{order.price}}</td>
+           <td><button class="btn btn-danger" type="submit">remove</button>
+           </td>
           </tr>
         </tbody>
     
-            <button class="btn btn-primary" type="submit">Purchase</button>
+            <button class="btn btn-primary" type="submit">Checkout</button>
            
       </table>
 
