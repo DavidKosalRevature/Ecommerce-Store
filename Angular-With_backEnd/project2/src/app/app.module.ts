@@ -7,12 +7,14 @@ import { CartComponent } from './components/cart/cart.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryComponent } from './components/category/category.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
     CartComponent,
     CategoryComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
