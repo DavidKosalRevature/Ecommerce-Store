@@ -1,1 +1,19 @@
-<p>product-details works!</p>
+
+<br>
+<div class="col-lg-9">
+    <h3 class="text-center">Product Details</h3>
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let product of products.data">
+          <div class="card">
+            <!-- <img src="{{ Img_url+ product.image}}" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h5 class="card-title">{{ product.productName }}</h5>
+              <h1>{{ product.price | currency }} <span style="color: #666; font-size: 18px"><del>{{ product.mrp | currency}}</del></span></h1>
+              <p class="card-text">{{ product.description }}</p>
+              <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+</div>
