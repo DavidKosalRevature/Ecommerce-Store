@@ -123,22 +123,6 @@ public class User {
     )
     private String emailId;
 
-//	public User(Long userId, String firstName, String lastName, String username, String password, String address,
-//			String type, String emailId) {
-//		super();
-//		this.userId = userId;
-//		this.firstName = firstName;
-//		this.lastName = lastName;
-//		this.username = username;
-//		this.password = password;
-//		this.address = address;
-//		this.type = type;
-//		this.emailId = emailId;
-//	}
-//
-//	public User() {
-//		super();
-//	}
    
 
 }
