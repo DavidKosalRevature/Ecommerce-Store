@@ -7,11 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -19,17 +15,49 @@ import javax.persistence.Column;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Table(
+        name = "user",
+        uniqueConstraints = @UniqueConstraint(
+                name = "emailid_unique",
+                columnNames = "email_address"
+        ))
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    @SequenceGenerator(
+            name = "user_sequence",
+            sequenceName = "user_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "user_sequence"
+    )
+
+    private Long userId;
+
     private String firstName;
     private String lastName;
-    @Column(unique = true)
-    private String email;
-    private String address;
+
+    @Column(
+            name = "username",
+            nullable = false
+    )
+    private String username;
+
+    @Column(
+            name = "password",
+            nullable = false
+    )
     private String password;
+
+    private String address;
     private String type;
+
+    @Column(
+            name = "email_address",
+            nullable = false
+    )
+    private String emailId;
 
 }

@@ -1,9 +1,10 @@
-export class User {
-    id!: number;
-    firstName!: string;
-    lastName!: string;
-    email!: string;
-    address!: string;
-    password!: string;
-    type!: string;
+export interface IUser {
+    userId: number;
+    firstName: string;
+    lastName: string;
+    emailId: string;
+    username: string;
+    address: string;
+    password: string;
+    type: string;
 }

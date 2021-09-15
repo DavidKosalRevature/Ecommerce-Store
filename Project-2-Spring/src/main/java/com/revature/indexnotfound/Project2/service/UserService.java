@@ -14,5 +14,6 @@ public interface UserService {
     public User updateUser(long userId, User user);
 //    public User fetchUserByName(String userName);
     public void login(User user);
+    public User getUserByUsernameAndPassword(String username, String password);
 
 }

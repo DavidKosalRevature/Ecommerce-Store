@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../user';
+import { IUser } from '../user';
 import { UserService } from '../user.service';
 
 @Component({
@@ -11,28 +11,35 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   message = '';
-  user: User;
+  users: any;
+
   constructor(
     private route: ActivatedRoute,
       private router: Router,
         private userService: UserService
   ) {
-    this.user = new User();
+    
    }
 
   ngOnInit(): void {
   }
 
-  onFormSubmit(data: any){
-    this.userService.login(data).subscribe(response =>{
-      this.message = 'Login successful'
-      // localStorage.setItem('token', response.token)
-      // localStorage.setItem('user', JSON.stringify(response.user))
+  onFormSubmit(data: IUser){
+    this.userService.login(data).subscribe(data =>{
+      this.users = data;
+      console.log(this.users)
+      if(this.users != null){
+        console.log("valid login");
+        this.router.navigate(['/home']);
+      } else{
+        console.log("invalid login")
+      }
     })
+
   }
 
-  goToHome(){
-    this.router.navigate(['/home'])
+  goToHome(user: IUser){
+    this.router.navigate(['/login/' + user.username + '/' + user.password])
   }
 
 

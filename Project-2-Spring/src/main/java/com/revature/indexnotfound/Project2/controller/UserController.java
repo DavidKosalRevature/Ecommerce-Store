@@ -19,25 +19,25 @@ public class UserController {
 
     private final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
-    @PostMapping("/users")
-    public User saveEmployee(@Valid @RequestBody User user){
+    @PostMapping("/register")
+    public User saveUsers(@Valid @RequestBody User user){
         LOGGER.info("saved users");
         return service.saveUser(user);
     }
 
-    @GetMapping("/users")
+    @GetMapping("/register")
     public List<User> getUsers(){
         LOGGER.info("get ALL users");
         return service.fetchUserList();
     }
 
-    @GetMapping("/users/{id}")
+    @GetMapping("/register/{id}")
     public User getUserById(@PathVariable("id") long userId){
         LOGGER.info("get user by id");
         return service.fetchUserById(userId);
     }
 
-    @DeleteMapping("/users/{id}")
+    @DeleteMapping("/register/{id}")
     public String deleteUserById(@PathVariable("id") long userId){
         LOGGER.info(("deleted user"));
         service.deleteUserById(userId);
@@ -48,6 +48,14 @@ public class UserController {
     public User updateUser(@PathVariable("id") long userId, @RequestBody User user){
         return service.updateUser(userId, user);
     }
+
+    @GetMapping("/login/{username}/{password}")
+    public User getUserByUsernameAndPassword(@PathVariable String username,
+                                             @PathVariable String password){
+        LOGGER.info(("logged in"));
+        return service.getUserByUsernameAndPassword(username, password);
+    }
+
 
 //    @GetMapping("/employees/name/{firstName}")
 //    public User getUserbyName(@PathVariable("firstName") String firstName){

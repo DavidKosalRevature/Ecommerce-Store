@@ -1,33 +1,51 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { User } from './user';
+import { IUser } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private userUrl: string;
+  private BASEURL = 'http://localhost:8080/';
+  private ENDPOINTS = {
+    REGISTER: 'register',
+    LOGIN: 'login'
+  }
+
 
   constructor(private http: HttpClient) {
-    this.userUrl = 'http://localhost:8080/users';
    }
 
-  public findAll(): Observable<User[]>{
-    return this.http.get<User[]>(this.userUrl);
+  public getUsers(): Observable<IUser[]>{
+    return this.http.get<IUser[]>(
+      `${this.BASEURL + this.ENDPOINTS.REGISTER}`
+      );
   }
 
-  public save(user: User){
-    return this.http.post<User>(this.userUrl, user);
+  public getUsersById(id: any): Observable<IUser>{
+    return this.http.get<IUser>(
+      `${this.BASEURL + this.ENDPOINTS.REGISTER}/@{id}`
+    )
   }
 
-  public login(user: User){
-    return this.http.post<any>(this.userUrl, user);
+  public createUsers(user: any){
+    return this.http.post<any>(
+      `${this.BASEURL + this.ENDPOINTS.REGISTER}`,
+      user
+    );
+  }
+
+  public login(user: IUser){
+    return this.http.get<IUser>(
+      `${this.BASEURL + this.ENDPOINTS.LOGIN + "/" + user.username 
+        + "/" + user.password}`
+    );
+    
   }
 
   public logout(){
-    localStorage.clear();
   }
 
   public loggedIn(): boolean{

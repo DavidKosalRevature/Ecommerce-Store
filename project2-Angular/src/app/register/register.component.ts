@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from '../user';
+import { IUser } from '../user';
 import { UserService } from '../user.service';
 
 @Component({
@@ -10,21 +10,20 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  user: User;
-  
   constructor(
     private route: ActivatedRoute,
       private router: Router,
         private userService: UserService
   ) {
-    this.user = new User();
+    
    }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    this.userService.save(this.user).subscribe(result => this.gotoUserList());
+  onSubmit(user: any){
+    this.userService.createUsers(user).subscribe(x => console.log(x));
+    this.router.navigate(['/home']);
   }
   gotoUserList() {
     this.router.navigate(['/users']);
