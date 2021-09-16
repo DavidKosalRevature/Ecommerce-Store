@@ -5,18 +5,21 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 const routes: Routes = [
-  {
-    path:'',redirectTo: '/productDetails',pathMatch:'full'
-  },
+  // {
+  //   path:'',redirectTo: '/productDetails',pathMatch:'full'
+  // },
+  //  {
+  //   path:'',redirectTo: '/cart',pathMatch:'full'
+  // },
 {
 path:'productDetails', component: ProductDetailsComponent
 },
 {
   path:'cart', component: CartComponent
 },
-  {
-    path:'**',component: PageNotFoundComponent
-  }
+  // {
+  //   path:'**',component: PageNotFoundComponent
+  // }
 ];
 
 @NgModule({

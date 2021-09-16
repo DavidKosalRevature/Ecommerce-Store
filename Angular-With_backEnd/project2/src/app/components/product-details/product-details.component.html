@@ -5,12 +5,12 @@
   <div class="row" >
       <div class="col-lg-9" >
         <div class="card">
-          <!-- <img src="{{ Img_url+ product.image}}" class="card-img-top" alt="..."> -->
+          <img src="{{productId.image}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{ productId.title }}</h5>
             <h1>{{ productId.price | currency }} <span style="color: #666; font-size: 18px"><del>{{ productId.category}}</del></span></h1>
             <p class="card-text">{{ productId.description }}</p>
-            <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+            <a href="#" (click)=onClickCart(productId) class="btn btn-primary btn-block">Add to Cart</a>
           </div>
         </div>
       </div>
@@ -25,12 +25,12 @@
     <div class="row" *ngFor="let product of products">
       <div class="col-sm-4" >
           <div class="card">
-            <!-- <img src="{{ Img_url+ product.image}}" class="card-img-top" alt="..."> -->
+            <img src="{{product.image}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ product.title }}</h5>
               <h1>{{ product.price | currency }} <span style="color: #666; font-size: 18px"><del>{{ product.category}}</del></span></h1>
               <!-- <p class="card-text">{{ product.description }}</p> -->
-              <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
+              <a href="#" (click)=onClickCart(product) class="btn btn-primary btn-block">Add to Cart</a>
             </div>
           </div>
         </div>

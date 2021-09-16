@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductDetailsService } from 'src/app/services/product-details.service';
 
 @Component({
@@ -13,8 +14,7 @@ public productId:any;
 public products:any
 
 
-
-  constructor(private productDetailsService:ProductDetailsService,private route:ActivatedRoute) { 
+  constructor(private productDetailsService:ProductDetailsService,private route:ActivatedRoute,private cartService: CartService,private router:Router) { 
 
     this.productId=this.route.snapshot.paramMap.get('productId')
   }
@@ -33,6 +33,12 @@ console.log(this.products)
     })
   }
 
+onClickCart(product:any){
 
+  this.cartService.addToCart(product);
+
+  console.log(this.cartService.items);
+  this.router.navigate(['/cart'])
+}
 
 }
