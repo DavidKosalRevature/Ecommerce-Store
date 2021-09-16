@@ -10,6 +10,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { UserDeleteComponent } from './components/user-delete/user-delete.compon
     UserListComponent,
     UserCreateComponent,
     UserUpdateComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    AboutUsComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
