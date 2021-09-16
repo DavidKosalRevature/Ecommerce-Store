@@ -14,6 +14,9 @@ export class UserService {
     LOGIN: 'login'
   }
 
+  private userObservable = Observable
+  private userAccount: any;
+
 
   constructor(private http: HttpClient) {
    }
@@ -37,12 +40,22 @@ export class UserService {
     );
   }
 
-  public login(user: IUser){
-    return this.http.get<IUser>(
+  public login(user: IUser): Observable<IUser>{
+    this.userAccount = this.http.get<IUser>(
       `${this.BASEURL + this.ENDPOINTS.LOGIN + "/" + user.username 
         + "/" + user.password}`
     );
+
+    return this.userAccount;
     
+  }
+
+  public getUserAccount(){
+    return this.userAccount;
+  }
+
+  public getFirstNameAndLastName(){
+    return this.userAccount;
   }
 
   public logout(){

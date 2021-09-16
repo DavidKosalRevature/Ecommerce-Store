@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IUser } from '../user';
 import { UserService } from '../user.service';
@@ -26,14 +26,23 @@ export class LoginComponent implements OnInit {
 
   onFormSubmit(data: IUser){
     this.userService.login(data).subscribe(data =>{
+
       this.users = data;
       console.log(this.users)
+
       if(this.users != null){
+
         console.log("valid login");
+        this.message = "Login Successful"
+        window.alert("Login Successful")
         this.router.navigate(['/home']);
+
       } else{
+
         console.log("invalid login")
+        this.message = "Username or Password Not Found"
       }
+
     })
 
   }
