@@ -25,6 +25,13 @@ public class UserController {
         return service.saveUser(user);
     }
 
+    @PostMapping("/login/{username}/{password}")
+    public User getUserByUsernameAndPassword(@PathVariable String username,
+                                             @PathVariable String password){
+        LOGGER.info(("logged in"));
+        return service.getUserByUsernameAndPassword(username, password);
+    }
+
     @GetMapping("/register")
     public List<User> getUsers(){
         LOGGER.info("get ALL users");
@@ -49,16 +56,10 @@ public class UserController {
         return service.updateUser(userId, user);
     }
 
-    @GetMapping("/login/{username}/{password}")
-    public User getUserByUsernameAndPassword(@PathVariable String username,
-                                             @PathVariable String password){
-        LOGGER.info(("logged in"));
-        return service.getUserByUsernameAndPassword(username, password);
-    }
-
-
-//    @GetMapping("/employees/name/{firstName}")
-//    public User getUserbyName(@PathVariable("firstName") String firstName){
-//        return service.fetchUserByName(firstName);
+//    @GetMapping("/login/{username}/{password}")
+//    public User getUserByUsernameAndPassword(@PathVariable String username,
+//                                             @PathVariable String password){
+//        LOGGER.info(("logged in"));
+//        return service.getUserByUsernameAndPassword(username, password);
 //    }
 }

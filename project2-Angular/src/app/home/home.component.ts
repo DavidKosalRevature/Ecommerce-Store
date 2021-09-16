@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IUser } from '../user';
 import { UserService } from '../user.service';
 
 @Component({
@@ -9,15 +10,28 @@ import { UserService } from '../user.service';
 export class HomeComponent implements OnInit {
 
   message = '';
-  user : any;
+  user: any;
+  users : IUser = {
+    userId: 0,
+    firstName: '',
+    lastName: '',
+    emailId: '',
+    username: '',
+    address: '',
+    password: '',
+    type: ''
+  }
+  
 
   constructor(private userService: UserService) {
-    this.user = userService.getUsersById(4)
    }
 
   ngOnInit(): void {
-      this.message = '' + this.user;
-    
+      this.user = localStorage.getItem('user');
+      this.users = JSON.parse(this.user);
+      
   }
+
+  
 
 }

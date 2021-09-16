@@ -16,6 +16,7 @@ export class UserService {
 
   private userObservable = Observable
   private userAccount: any;
+  
 
 
   constructor(private http: HttpClient) {
@@ -28,9 +29,13 @@ export class UserService {
   }
 
   public getUsersById(id: any): Observable<IUser>{
-    return this.http.get<IUser>(
+    
+    this.userAccount = this.http.get<IUser>(
       `${this.BASEURL + this.ENDPOINTS.REGISTER}/@{id}`
     )
+
+    localStorage.setItem('user', this.userAccount);
+    return this.userAccount;
   }
 
   public createUsers(user: any){
@@ -41,10 +46,11 @@ export class UserService {
   }
 
   public login(user: IUser): Observable<IUser>{
-    this.userAccount = this.http.get<IUser>(
+    this.userAccount = this.http.post<IUser>(
       `${this.BASEURL + this.ENDPOINTS.LOGIN + "/" + user.username 
-        + "/" + user.password}`
+        + "/" + user.password}`, user
     );
+    localStorage.setItem('user', this.userAccount);
 
     return this.userAccount;
     

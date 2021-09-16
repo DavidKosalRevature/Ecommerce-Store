@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import {UserService} from './user.service';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     NavbarComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

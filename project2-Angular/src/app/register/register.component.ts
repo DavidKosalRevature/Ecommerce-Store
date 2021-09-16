@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(user: any){
     this.userService.createUsers(user).subscribe(x => console.log(x));
+    window.alert("Registration Successful");
     this.router.navigate(['/home']);
   }
   gotoUserList() {

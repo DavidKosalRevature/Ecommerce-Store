@@ -11,7 +11,7 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
 
   message = '';
-  users: any;
+  public users: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
 
       this.users = data;
       console.log(this.users)
+      localStorage.setItem('user', JSON.stringify(this.users))
 
       if(this.users != null){
 
