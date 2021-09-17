@@ -38,6 +38,7 @@ export class CartComponent implements OnInit {
     console.log("Cart component"+item)
     this.orderService.deleteCart(item).subscribe(cart=>{
       console.log(cart);
+      location.reload();
     })
   }
 }
