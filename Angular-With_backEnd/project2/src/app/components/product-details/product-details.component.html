@@ -10,7 +10,7 @@
             <h5 class="card-title">{{ productId.title }}</h5>
             <h1>{{ productId.price | currency }} <span style="color: #666; font-size: 18px"><del>{{ productId.category}}</del></span></h1>
             <p class="card-text">{{ productId.description }}</p>
-            <a href="#" (click)=onClickCart(productId) class="btn btn-primary btn-block">Add to Cart</a>
+            <button (click)=onClickCart(productId) class="btn btn-primary btn-block">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -28,9 +28,10 @@
             <img src="{{product.image}}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">{{ product.title }}</h5>
-              <h1>{{ product.price | currency }} <span style="color: #666; font-size: 18px"><del>{{ product.category}}</del></span></h1>
+              <h1>{{ product.price | currency }} <span style="color: #666; font-size: 18px">
+                <del>{{ product.category}}</del></span></h1>
               <!-- <p class="card-text">{{ product.description }}</p> -->
-              <a href="#" (click)=onClickCart(product) class="btn btn-primary btn-block">Add to Cart</a>
+              <button (click)=onClickCart(product) class="btn btn-primary btn-block">Add to Cart</button>
             </div>
           </div>
         </div>
