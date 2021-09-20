@@ -21,7 +21,8 @@ export class UserListComponent implements OnInit {
   }
 
   onEdit(id: any){
-this.router.navigate(['/edit', id])
+    console.log(id)
+this.router.navigate(['/edit'])
   }
 
 }

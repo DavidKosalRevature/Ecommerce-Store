@@ -11,13 +11,12 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
 
 
 const routes: Routes = [
-  {path: 'user/create', component: UserCreateComponent},
-  {path: 'user/delete', component: UserDeleteComponent},
-  {path: 'user/update', component: UserUpdateComponent},
-  {path: 'user/list', component: UserListComponent},
-  {path: 'about/us', component: AboutUsComponent},
-  {path: 'contact/us', component: ContactUsComponent},
-  
+  {path: 'add', component: UserCreateComponent},
+  {path: 'delete', component: UserDeleteComponent},
+  {path: 'edit', component: UserUpdateComponent},
+  {path: 'list', component: UserListComponent},
+  {path: 'about', component: AboutUsComponent},
+  {path: 'contact', component: ContactUsComponent},
   
 ];
 
