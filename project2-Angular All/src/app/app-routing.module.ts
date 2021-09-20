@@ -11,6 +11,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { OrderComponent } from './order/order.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { RegisterComponent } from './register/register.component';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
 // import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: 'productDetail', component: ProductDetailComponent},
   {path: 'orders', component: OrderComponent},
   {path: 'list', component: ListComponent},
-  {path: 'allOrders', component: AllOrdersComponent}
+  {path: 'allOrders', component: AllOrdersComponent},
+  {path: 'delete',  component: UserDeleteComponent}
 ];
 
 @NgModule({
