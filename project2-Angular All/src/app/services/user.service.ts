@@ -68,4 +68,10 @@ export class UserService {
         return false;
     }
 }
+
+deleteUser(id: any): Observable<IUser> {
+  return this.http.delete<IUser>(
+    `${this.BASEURL + this.ENDPOINTS.REGISTER}/${id}`
+  );
+}
 }

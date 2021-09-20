@@ -20,6 +20,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ListComponent } from './list/list.component';
 import { CategoryComponent } from './category/category.component';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
+import { UserDeleteComponent } from './user-delete/user-delete.component';
 
 
 
@@ -38,7 +39,8 @@ import { AllOrdersComponent } from './all-orders/all-orders.component';
     AboutUsComponent,
     ListComponent,
     CategoryComponent,
-    AllOrdersComponent
+    AllOrdersComponent,
+    UserDeleteComponent
   ],
   imports: [
     BrowserModule,
