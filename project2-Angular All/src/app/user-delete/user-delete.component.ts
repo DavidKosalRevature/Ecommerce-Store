@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -12,7 +12,8 @@ export class UserDeleteComponent implements OnInit {
   id: any;
   user: any;
 
-  constructor(private userService: UserService, private activateRoute: ActivatedRoute) {
+  constructor(private userService: UserService, private activateRoute: ActivatedRoute,
+    private router: Router) {
     this.id = activateRoute.snapshot.paramMap.get('id');
 
    }
@@ -24,7 +25,9 @@ export class UserDeleteComponent implements OnInit {
   }
 
   onSubmit(data: any){
-    this.userService.deleteUser(this.id).subscribe(a => console.log(a))
+    console.log(data);
+    this.userService.deleteUser(data).subscribe(a => console.log(a));
+    // this.router.navigate(['/list'])
   }
 
 

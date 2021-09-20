@@ -8,7 +8,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Type</th>
-            <th>Action</th>
+            <!-- <th>Action</th> -->
 
         </tr>
     </thead>
@@ -19,12 +19,12 @@
             <td>{{user.lastName}}</td>
             <td>{{user.emailId}}</td>
             <td>{{user.type}}</td>
-            <td>
-                <!-- <button class="btn btn-primary">Edit</button> -->
-                <button class="btn btn-danger">Delete</button> 
+            <!-- <td>
+                
+                <button class="btn btn-danger" (click)="onDelete()">Delete</button> 
                 <button (click)="onEdit()"  class="btn btn-primary">Edit</button>
 
-            </td>
+            </td> -->
         </tr>
 
     </tbody>

@@ -20,6 +20,10 @@ export class ListComponent implements OnInit {
     })
   }
 
+  onDelete(){
+    this.router.navigate(['/delete'])
+  }
+
   onEdit(){
 this.router.navigate(['/edit'])
   }

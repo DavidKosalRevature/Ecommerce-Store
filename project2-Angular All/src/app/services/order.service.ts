@@ -26,6 +26,12 @@ export class OrderService {
 
   }
 
+  public getOrderById(id: any): Observable<IOrder>{
+    return this.http.get<IOrder>(
+      `${this.BASEURL + this.ENDPOINTS.IOrder}/@{id}`
+    )
+  }
+
 
   createOrder(data: IOrder): Observable<IOrder> {
     return this.http.post<IOrder>(

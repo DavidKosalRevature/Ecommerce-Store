@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   message = '';
   users: any;
+  showNavBarItem : any;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,10 +47,6 @@ export class LoginComponent implements OnInit {
 
     })
 
-  }
-
-  goToHome(user: IUser){
-    this.router.navigate(['/login/' + user.username + '/' + user.password])
   }
 
 
