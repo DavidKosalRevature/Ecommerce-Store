@@ -7,6 +7,7 @@ import { UserCreateComponent } from './components/user-create/user-create.compon
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserUpdateComponent } from './components/user-update/user-update.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'list', component: UserListComponent},
   {path: 'about', component: AboutUsComponent},
   {path: 'contact', component: ContactUsComponent},
+  {path: 'home', component: HomeComponent}
   
 ];
 

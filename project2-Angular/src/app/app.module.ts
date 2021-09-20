@@ -12,6 +12,7 @@ import { UserUpdateComponent } from './components/user-update/user-update.compon
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     UserUpdateComponent,
     UserDeleteComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
