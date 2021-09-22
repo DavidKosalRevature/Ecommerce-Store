@@ -1,6 +1,11 @@
 # Ecommerce Store
 E-commerce store that lets users create an account and view products, add products to cart and checkout their cart. Users can also create employee acccounts that can view all users and view all orders
 
+# Team Members
+Leyla Shams
+Jong Kim
+Mohamad Uddin
+
 # Technologies Used
 * HTML
 * CSS
